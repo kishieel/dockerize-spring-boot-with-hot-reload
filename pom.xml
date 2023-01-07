@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.0.1</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>pl.kishieel</groupId>
+	<artifactId>dockerize-spring-boot-with-live-reload</artifactId>
+	<version>0.0.1</version>
+	<name>Dockerized Spring Boot with Live-Reload</name>
+	<description>Dockerized Spring Boot with Live-Reload</description>
+	<properties>
+		<java.version>17</java.version>
+		<spring-boot-starter.version>3.0.1</spring-boot-starter.version>
+		<spring-boot-starter-test.version>3.0.1</spring-boot-starter-test.version>
+		<spring-boot-starter-web.version>3.0.1</spring-boot-starter-web.version>
+		<spring-boot-maven-plugin.version>3.0.1</spring-boot-maven-plugin.version>
+		<spring-boot-devtools.version>3.0.1</spring-boot-devtools.version>
+		<go-offline-maven-plugin.version>1.2.8</go-offline-maven-plugin.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+			<version>${spring-boot-starter.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<version>${spring-boot-starter-test.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>${spring-boot-starter-web.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<version>${spring-boot-devtools.version}</version>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>app</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring-boot-maven-plugin.version}</version>
+			</plugin>
+
+			<plugin>
+				<groupId>de.qaware.maven</groupId>
+				<artifactId>go-offline-maven-plugin</artifactId>
+				<version>${go-offline-maven-plugin.version}</version>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
